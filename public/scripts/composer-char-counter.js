@@ -6,8 +6,7 @@ $(document).ready(function() {
         counter.innerText = 140 - this.value.length;
         if (this.value.length > 140) {
           counter.style.color = '#FF0000'
-        }
-        if (this.value.length <= 140) {
+        } else {
           counter.style.color = null
         }
       }
