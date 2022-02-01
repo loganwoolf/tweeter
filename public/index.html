@@ -23,8 +23,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/471270be1a.js" crossorigin="anonymous"></script>
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script defer src="/scripts/client.js"></script>
 
 </head>
 <body>
@@ -58,6 +57,28 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+    <section class="timeline">
+
+      <article class="tweet">
+        <header>
+          <figure>
+            <img src="#">
+            <figcaption>James Hetfield</figcaption>
+          </figure>
+          <p>@Hetfield</p>
+        </header>
+        <p>Here is my tweet text!</p>
+        <footer>
+          <time>an hour ago</time>
+          <span>
+            <button class="flag"><i class="fas fa-flag"></i></button>
+            <button class="retweet"><i class="fas fa-retweet"></i></button>
+            <button class="like"><i class="fas fa-heart"></i></button>
+          </span>
+        </footer>
+      </article>
+
     </section>
   </main>
 </body>
