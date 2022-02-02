@@ -44,12 +44,14 @@ $(() => {
   });
 
   $('.new-tweet form').on("submit", function(event) {
+    console.log($(this));
     event.preventDefault();
     $.ajax({
       method: "POST",
       url: "/tweets",
       data: $(this).serialize()
     });
+    $(this)[0][0].value = '';
   });
 
   const renderTweets = function(tweets) {
