@@ -6,35 +6,10 @@
 
 $(() => {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1643612965429
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1643699365429
-    }
-  ];
-
-
   $('textarea').on({
     input: function() {
       const counter = $(this).next('div').children('output')[0];
+      console.log(counter);
       counter.innerText = 140 - this.value.length;
       if (this.value.length > 140) {
         return counter.style.color = '#FF0000';
@@ -50,11 +25,12 @@ $(() => {
       method: "POST",
       url: "/tweets",
       data: $(this).serialize()
-    });
+    }).then(loadTweets);
     $(this)[0][0].value = '';
   });
 
   const renderTweets = function(tweets) {
+    $('#timeline').empty();
     tweets.forEach(tweet => $('#timeline').append(createTweetElement(tweet)));
   };
 
@@ -82,6 +58,15 @@ $(() => {
       );
   };
 
-  renderTweets(data);
+  const loadTweets = function() {
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    }).then(tweets => {
+      renderTweets(tweets);
+    });
+  };
+
+  loadTweets();
 
 });
