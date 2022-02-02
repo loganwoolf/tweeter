@@ -43,6 +43,15 @@ $(() => {
     }
   });
 
+  $('.new-tweet form').on("submit", function(event) {
+    event.preventDefault();
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    });
+  });
+
   const renderTweets = function(tweets) {
     tweets.forEach(tweet => $('#timeline').append(createTweetElement(tweet)));
   };
