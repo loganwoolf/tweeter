@@ -13,17 +13,31 @@ $(() => {
       if (this.value.length > 140) {
         return counter.style.color = '#FF0000';
       }
-      return  counter.style.color = null;
+      return counter.style.color = null;
     }
   });
 
-
-
-
-
-
-
-
-  
-
+  const createTweetElement = function(tweet) {
+    return $('<article>')
+      .addClass('tweet')
+      .append(
+        `<header>
+        <figure>
+          <img src="${tweet.user.avatars}">
+          <figcaption>${tweet.user.name}</figcaption>
+        </figure>
+        <p>${tweet.user.handle}</p>
+      </header>
+      <p>${tweet.content.text}</p>
+      <footer>
+        <time>${tweet.created_at}</time>
+        <span>
+          <button class="flag"><i class="fas fa-flag"></i></button>
+          <button class="retweet"><i class="fas fa-retweet"></i></button>
+          <button class="like"><i class="fas fa-heart"></i></button>
+        </span>
+      </footer>
+      `
+      );
+  };
 });
