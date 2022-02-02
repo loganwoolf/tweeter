@@ -21,6 +21,12 @@ $(() => {
     return tweetBody.length > 0 && tweetBody.length <= 140;
   };
 
+  const escape = function(tweetBody) {
+    let container = document.createElement('div');
+    container.appendChild(document.createTextNode(tweetBody));
+    return container.innerHTML;
+  };
+
   $('.new-tweet form').on("submit", function(event) {
     event.preventDefault();
     const tweetBody = this[0].value;
@@ -50,14 +56,14 @@ $(() => {
       .append(
         `<header>
         <figure>
-          <img src="${tweet.user.avatars}">
-          <figcaption>${tweet.user.name}</figcaption>
+          <img src="${escape(tweet.user.avatars)}">
+          <figcaption>${escape(tweet.user.name)}</figcaption>
         </figure>
-        <p>${tweet.user.handle}</p>
+        <p>${escape(tweet.user.handle)}</p>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer>
-        <time>${timeago.format(tweet.created_at)}</time>
+        <time>${timeago.format(escape(tweet.created_at))}</time>
         <span>
           <button class="flag"><i class="fas fa-flag"></i></button>
           <button class="retweet"><i class="fas fa-retweet"></i></button>
