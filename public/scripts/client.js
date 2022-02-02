@@ -6,6 +6,32 @@
 
 $(() => {
 
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1643612965429
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd"
+      },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1643699365429
+    }
+  ];
+
+
   $('textarea').on({
     input: function() {
       const counter = $(this).next('div').children('output')[0];
@@ -16,6 +42,10 @@ $(() => {
       return counter.style.color = null;
     }
   });
+
+  const renderTweets = function(tweets) {
+    tweets.forEach(tweet => $('#timeline').append(createTweetElement(tweet)));
+  };
 
   const createTweetElement = function(tweet) {
     return $('<article>')
@@ -30,7 +60,7 @@ $(() => {
       </header>
       <p>${tweet.content.text}</p>
       <footer>
-        <time>${tweet.created_at}</time>
+        <time>${timeago.format(tweet.created_at)}</time>
         <span>
           <button class="flag"><i class="fas fa-flag"></i></button>
           <button class="retweet"><i class="fas fa-retweet"></i></button>
@@ -40,4 +70,7 @@ $(() => {
       `
       );
   };
+
+  renderTweets(data);
+
 });
