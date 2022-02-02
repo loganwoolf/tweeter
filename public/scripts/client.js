@@ -9,7 +9,6 @@ $(() => {
   $('textarea').on({
     input: function() {
       const counter = $(this).next('div').children('output')[0];
-      console.log(counter);
       counter.innerText = 140 - this.value.length;
       if (this.value.length > 140) {
         return counter.style.color = '#FF0000';
@@ -18,15 +17,26 @@ $(() => {
     }
   });
 
+  const isValidTweet = function(tweetBody) {
+    return tweetBody.length > 0 && tweetBody.length <= 140;
+  };
+
   $('.new-tweet form').on("submit", function(event) {
-    console.log($(this));
     event.preventDefault();
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize()
-    }).then(loadTweets);
-    $(this)[0][0].value = '';
+    const tweetBody = this[0].value;
+    if (isValidTweet(tweetBody)) {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $(this).serialize()
+      }).then(loadTweets);
+      return $(this)[0][0].value = '';
+    }
+    if (tweetBody.length === 0) {
+      alert("Can't send an empty tweet!");
+    } else if (tweetBody.length > 140) {
+      alert("Tweet is too long!");
+    }
   });
 
   const renderTweets = function(tweets) {
