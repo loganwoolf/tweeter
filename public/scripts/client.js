@@ -6,6 +6,16 @@
 
 $(() => {
 
+  $(window).on('scroll', function() {
+    const $jumpButton = $('#jump-to-top');
+    const $scrollPosition = $(this).scrollTop();
+    const $timelinePosition = $('#timeline').offset().top;
+    if ($scrollPosition > $timelinePosition) {
+      return $jumpButton.show();
+    }
+    return $jumpButton.hide();
+  });
+
   $('textarea').on({
     input: function() {
       const counter = $(this).next('div').children('output')[0];
