@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -29,4 +30,28 @@ main {
   width: 90%;
   margin: 0 auto;
   background-color: inherit;
+}
+
+#jump-to-top {
+  --size: 3rem;
+  position: fixed;
+  bottom: calc(var(--size) / 2);
+  right: calc(var(--size) / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--size);
+  height: var(--size);
+  background-color: #4056a1;
+  border-radius: calc(var(--size) / 2);
+  font-size: calc(var(--size) / 2);
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 60%;
+  transition: all 120ms ease-in;
+}
+#jump-to-top:hover {
+  opacity: 100%;
+  transform: scale(1.3);
 }
