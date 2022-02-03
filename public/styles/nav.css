@@ -36,3 +36,10 @@ nav > span {
 	text-align: center;
 	color: #ff4500;
 }
+
+
+@media screen and (min-width: 960px) {
+	nav {
+		margin-bottom: 4rem;
+	}
+}
