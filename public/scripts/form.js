@@ -1,4 +1,13 @@
 
+const updateCount = function() {
+  const counter = $(this).next('div').children('output')[0];
+  counter.innerText = 140 - this.value.length;
+  if (this.value.length > 140) {
+    return counter.style.color = '#FF0000';
+  }
+  return counter.style.color = null;
+}
+
 const showError = function tweetLengthError(length) {
   // magic timeout number of 600 is 200ms more than default animation length of slideUp/slideDown
   // text changes at exactly the right moment that text is invisible if two opposite
