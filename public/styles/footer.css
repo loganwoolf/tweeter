@@ -1,0 +1,22 @@
+#footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  background-color: #000000;
+  font-weight: 600;
+}
+
+#footer .logo {
+  display: inline-block;
+  transition: all 0.16s ease-in;
+  font-family: Bungee, monospace;
+  font-size: 1.8rem;
+  user-select: none;
+}
+#footer .logo:hover {
+  opacity: 100%;
+  color: #4056a1;
+  transform: scale(1.2) rotate(-10deg) translate(0.5em, 0.1em);
+}
