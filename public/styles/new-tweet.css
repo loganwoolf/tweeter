@@ -1,64 +1,64 @@
 .new-tweet {
-  width: 100%;
-  margin: 1em 0;
+	width: 100%;
+	margin: 1em 0;
 }
 
 .new-tweet h2 {
-  visibility: hidden;
-  position: absolute;
+	visibility: hidden;
+	position: absolute;
 }
 
 .new-tweet form {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .new-tweet form label {
-font-weight: 600;
-margin-bottom: 0.2em;
+	font-weight: 600;
+	margin-bottom: 0.2em;
 }
 
 .new-tweet form textarea {
-  border: none;
-  background-color: inherit;
-  resize: none;
-  outline: none;
-  font-weight: 600;
-  font-size: 0.8em;
-  height: 5rem;
-  border-bottom: 4px solid #000000;
-  margin-bottom: 0.8em;
+	border: none;
+	background-color: inherit;
+	resize: none;
+	outline: none;
+	font-weight: 600;
+	font-size: 0.8em;
+	height: 5rem;
+	border-bottom: 4px solid #000000;
+	margin-bottom: 0.8em;
 }
 
 .new-tweet form div {
-  display: flex;
-  justify-content: space-between;
-  font-family: Bungee, serif;
-  user-select: none;
+	display: flex;
+	justify-content: space-between;
+	font-family: Bungee, serif;
+	user-select: none;
 }
 
 .new-tweet form div button {
-  background-color: #4056A1;
-  color: #ffffff;
-  padding: 0.2em 0.5em;
-  border: unset;
+	background-color: #4056a1;
+	color: #f4f1ec;
+	padding: 0.2em 0.5em;
+	border: unset;
 }
 
 #error-block {
-  display: none;
+	display: none;
 }
 #error-block > div {
-  display: flex;
-  border: 4px solid #ff0000;
-  color: #ff0000;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-weight: 600;
-  margin-bottom: 1em;
+	display: flex;
+	border: 4px solid #ff0000;
+	color: #ff0000;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 1em;
 }
 #error-block i {
-  display: block;
-  padding: 0 2rem;
-  font-size: 1.2em;
+	display: block;
+	padding: 0 2rem;
+	font-size: 1.2em;
 }
