@@ -47,6 +47,7 @@ const sendTweet = function(event) {
       url: "/tweets",
       data: $(this).serialize()
     }).then(loadTweets);
+    $(this).children('div').children('output').text('140');
     return $(this)[0][0].value = '';
   }
   if (tweetBody.length === 0) {
