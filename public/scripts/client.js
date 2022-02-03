@@ -27,8 +27,24 @@ $(() => {
     return container.innerHTML;
   };
 
-  const showError = function tweetLengthError() {
-    $('#error-block').slideDown();
+  const showError = function tweetLengthError(length) {
+    // magic timeout number of 600 coincides with default animation length of slideUp/slideDown
+    // text changes at exactly the right moment that text is invisible if two opposite
+    // length errors are shown back to back
+    let timeout = 0;
+    const $errorBlock = $('#error-block');
+    if ($errorBlock[0].style.display === 'block') {
+      timeout = 600;
+    }
+    setTimeout(() => {
+      if (length === 0) {
+        $errorBlock.children('div').children('p').text("You forgot to type in a tweet!");
+        return $errorBlock.slideDown();
+      } else {
+        $errorBlock.children('div').children('p').text("Your tweet is too long! Try to reword it to be at most 140 characters.");
+        return $errorBlock.slideDown();
+      }
+    }, timeout);
   };
 
   $('.new-tweet form').on("submit", function(event) {
@@ -48,10 +64,10 @@ $(() => {
     }
     if (tweetBody.length === 0) {
       // alert("Can't send an empty tweet!");
-      showError();
+      showError(tweetBody.length);
     } else if (tweetBody.length > 140) {
       // alert("Tweet is too long!");
-      showError();
+      showError(tweetBody.length);
     }
   });
 
