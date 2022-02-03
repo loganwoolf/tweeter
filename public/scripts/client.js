@@ -46,6 +46,20 @@ $(() => {
     }, timeout);
   };
 
+  const toggleTweetForm = function() {
+    const $tweetForm = $('.new-tweet');
+    if ($tweetForm[0].style.display === 'none') {
+      return $tweetForm.slideDown({
+        complete: () => {
+          $tweetForm.children('form').children('textarea').focus();
+        }
+      });
+    }
+    $tweetForm.slideUp();
+  };
+
+  $('.nav-quick-tweet').on('click', toggleTweetForm);
+
   $('.new-tweet form').on("submit", function(event) {
     event.preventDefault();
     const $errorBlock = $('#error-block');
