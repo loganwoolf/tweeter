@@ -59,9 +59,5 @@ const sendTweet = function(event) {
     $(this).children('div').children('output').text('140');
     return $(this)[0][0].value = '';
   }
-  if (tweetBody.length === 0) {
-    showError(tweetBody.length);
-  } else if (tweetBody.length > 140) {
-    showError(tweetBody.length);
-  }
+  return showError(tweetBody.length);
 }
