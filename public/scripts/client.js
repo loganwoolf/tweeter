@@ -27,8 +27,16 @@ $(() => {
     return container.innerHTML;
   };
 
+  const showError = function tweetLengthError() {
+    $('#error-block').slideDown();
+  };
+
   $('.new-tweet form').on("submit", function(event) {
     event.preventDefault();
+    const $errorBlock = $('#error-block');
+    if ($errorBlock[0].style.display === 'block') {
+      $errorBlock.slideUp();
+    }
     const tweetBody = this[0].value;
     if (isValidTweet(tweetBody)) {
       $.ajax({
@@ -39,9 +47,11 @@ $(() => {
       return $(this)[0][0].value = '';
     }
     if (tweetBody.length === 0) {
-      alert("Can't send an empty tweet!");
+      // alert("Can't send an empty tweet!");
+      showError();
     } else if (tweetBody.length > 140) {
-      alert("Tweet is too long!");
+      // alert("Tweet is too long!");
+      showError();
     }
   });
 

@@ -51,6 +51,13 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div id="error-block" >
+        <div>
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>Your tweet is too long! Try to reword it to be at most 140 characters.</p>
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+      </div>
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="post">
         <label for="tweet-text">What are you humming about?</label>

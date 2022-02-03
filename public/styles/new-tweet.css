@@ -42,3 +42,22 @@ margin-bottom: 0.2em;
   padding: 0.2em 0.5em;
   border: unset;
 }
+
+#error-block {
+  display: none;
+}
+#error-block > div {
+  display: flex;
+  border: 4px solid red;
+  color: red;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+#error-block i {
+  display: block;
+  padding: 0 2rem;
+  font-size: 1.2em;
+}
