@@ -28,7 +28,7 @@ $(() => {
   };
 
   const showError = function tweetLengthError(length) {
-    // magic timeout number of 600 coincides with default animation length of slideUp/slideDown
+    // magic timeout number of 600 is 200ms more than default animation length of slideUp/slideDown
     // text changes at exactly the right moment that text is invisible if two opposite
     // length errors are shown back to back
     let timeout = 0;
@@ -40,10 +40,9 @@ $(() => {
       if (length === 0) {
         $errorBlock.children('div').children('p').text("You forgot to type in a tweet!");
         return $errorBlock.slideDown();
-      } else {
-        $errorBlock.children('div').children('p').text("Your tweet is too long! Try to reword it to be at most 140 characters.");
-        return $errorBlock.slideDown();
       }
+      $errorBlock.children('div').children('p').text("Your tweet is too long! Try to reword it to be at most 140 characters.");
+      return $errorBlock.slideDown();
     }, timeout);
   };
 
