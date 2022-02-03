@@ -14,12 +14,12 @@ body > header span {
   font-weight: 300;
 }
 
+/* Desktop */
 @media screen and (min-width: 960px) {
-  
   body > header {
     float: left;
     width: 30vw;
     margin-right: 10vw;
-    margin-left: 5vw;
+    margin-left: 4rem;
   }
 }

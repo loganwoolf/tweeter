@@ -55,3 +55,10 @@ main {
   opacity: 100%;
   transform: scale(1.3);
 }
+
+/* Desktop */
+@media screen and (min-width: 960px) {
+  body {
+    margin-top: 8rem;
+  }
+}
