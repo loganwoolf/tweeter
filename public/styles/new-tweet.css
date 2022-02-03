@@ -44,6 +44,10 @@
 	border: unset;
 }
 
+.new-tweet form div button:hover {
+	box-shadow: 8px 8px #00000020;
+}
+
 #error-block {
 	display: none;
 }
