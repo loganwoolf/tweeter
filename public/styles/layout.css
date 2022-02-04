@@ -6,6 +6,8 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -16,10 +18,13 @@ html {
  */
 
 body {
+  min-height: 100vh;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+  padding-bottom: 8rem;
 }
 
 /*
@@ -59,6 +64,6 @@ main {
 /* Desktop */
 @media screen and (min-width: 960px) {
   body {
-    margin-top: 8rem;
+    padding: 8rem 0;
   }
 }
