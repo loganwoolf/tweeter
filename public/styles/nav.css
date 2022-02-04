@@ -44,3 +44,18 @@ nav > span {
 		background-color: #4056a1;
 	}
 }
+
+@media screen and (max-width: 550px) {
+	nav {
+		padding: 0;
+	}
+
+	nav > span {
+		transform: scale(0.7);
+	}
+	
+	nav > div {
+		transform: scale(0.7);
+	}
+	
+}
