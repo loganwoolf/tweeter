@@ -23,3 +23,15 @@
   color: #4056a1;
   transform: scale(1.2) rotate(-10deg) translate(0.5em, 0.1em);
 }
+
+@media screen and (max-width: 500px) {
+  #footer p {
+    visibility: hidden;
+  }
+  #footer span {
+    visibility: visible;
+    position: absolute;
+    left: 10vw;
+  }
+
+}
