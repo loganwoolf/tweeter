@@ -17,9 +17,8 @@ body > header span {
 /* Desktop */
 @media screen and (min-width: 960px) {
   body > header {
-    float: left;
-    width: 30vw;
-    margin-right: 10vw;
+    width: calc(50vw - 8rem);
     margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
