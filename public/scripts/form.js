@@ -6,7 +6,7 @@ const updateCount = function() {
     return counter.style.color = '#FF0000';
   }
   return counter.style.color = null;
-}
+};
 
 const showError = function tweetLengthError(length) {
   // magic timeout number of 600 is 200ms more than default animation length of slideUp/slideDown
@@ -60,4 +60,4 @@ const sendTweet = function(event) {
     return $(this)[0][0].value = '';
   }
   return showError(tweetBody.length);
-}
+};
